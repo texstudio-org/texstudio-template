@@ -1,0 +1,8 @@
+{
+    "Author": "Ali Hariri",
+    "Date": "2023-02-28",
+    "Description": "A style-agnostic LaTeX template that eliminates the need to write style-specific code and eases switching between the typical document classes of computer science research papers.\nThe template supports IEEEtran, llncs and acmart styles only. Feel free to contribute and support more styles.\nhttps://github.com/HaririAli/cs-paper-template",
+    "License": "GNU Free Documentation License",
+    "Name": "cs-paper-template",
+    "Version": "2.0"
+}

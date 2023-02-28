@@ -1,0 +1,63 @@
+%=============================%
+%   DO NOT MODIFY THIS FILE   %
+%=============================%
+
+\ifx\varDocClass\undefined
+\def \varDocClass{llncs}
+\fi
+
+\ifx\varKeyvals\undefined
+\def \varKeyvals{runningheads}
+\fi
+
+\def\varAuthors{}
+\def\varInstitutions{}
+
+\makeatletter
+\newcommand{\addAuthor}[2]{
+	\ifx\varAuthors\empty
+	\else
+	\g@addto@macro\varAuthors{ \and }
+	\fi
+	\g@addto@macro\varAuthors{#1\inst{#2}}
+}
+	
+\newcommand{\addInstitution}[4]{
+	\ifx\varInstitutions\empty
+	\else
+	\g@addto@macro\varInstitutions{ \and }
+	\fi
+	\g@addto@macro\varInstitutions{#1, #2, #3 \\ \email{\detokenize{#4}}}
+}
+
+\newcommand{\addAbstract}[1]{\def\varAbstract{#1}}
+\newcommand{\addTitle}[1]{\def\varTitle{#1}}
+\newcommand{\addKeywords}[1]{
+	\def\varKeywords{}
+	\@for\varKeyword:={#1}\do{
+		\ifx\varKeywords\empty
+		\else
+		\g@addto@macro\varKeywords{ \and}
+		\fi
+		\expandafter\g@addto@macro\expandafter\varKeywords\expandafter{\varKeyword}
+	}
+}
+\makeatother
+
+\def\insertRunningHeads{}
+\newcommand{\setRunningHeads}[1]{\def\insertRunningHeads{\authorrunning{#1}}}
+
+
+\newcommand{\insertTopmatter}{
+	\title{\varTitle}
+	\author{\varAuthors}
+	\institute{\varInstitutions}
+	\insertRunningHeads
+	\maketitle
+	\begin{abstract}
+		\varAbstract
+		\keywords{\varKeywords}
+	\end{abstract}
+}
+
+\newcommand{\setBibStyle}{\bibliographystyle{bibliography/splncs04}}

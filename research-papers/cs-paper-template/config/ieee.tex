@@ -1,0 +1,56 @@
+%=============================%
+%   DO NOT MODIFY THIS FILE   %
+%=============================%
+
+\ifx\varDocClass\undefined
+\def \varDocClass{IEEEtran}
+\fi
+
+\ifx\varKeyvals\undefined
+\def \varKeyvals{conference}
+\fi
+
+\def\varAuthors{}
+\def\varInstitutions{}
+
+\makeatletter
+\newcommand{\addAuthor}[2]{
+	\g@addto@macro\varAuthors{#1}
+	\@for\varRef:={#2}\do{
+		\expandafter\g@addto@macro\expandafter\varAuthors\expandafter{\expandafter\IEEEauthorrefmark\expandafter{\varRef}}
+	}
+	\g@addto@macro\varAuthors{ }
+}
+\newcommand{\addInst}[2]{%
+	\g@addto@macro\varInstitutions{ %
+		\IEEEauthorblockA{\IEEEauthorrefmark{#1}#2}
+	}
+}
+
+\newcounter{affId}
+\newcommand{\addInstitution}[4]{%
+	\stepcounter{affId}
+	\edef\myval{\theaffId}
+	\expandafter\addInst\expandafter{\myval}{#1, #2, #3\\#4}
+}
+\makeatother
+
+\newcommand{\addAbstract}[1]{\def\varAbstract{#1}}
+\newcommand{\addTitle}[1]{\def\varTitle{#1}}
+\newcommand{\addKeywords}[1]{\def\varKeywords{#1}}
+\newcommand{\setRunningHeads}[1]{}
+
+\newcommand{\insertTopmatter}{
+	\title{\varTitle}
+	\author{\IEEEauthorblockN{\varAuthors}\varInstitutions}
+	\maketitle
+	\begin{abstract}
+		\varAbstract
+	\end{abstract}
+	\begin{IEEEkeywords}
+		\varKeywords
+	\end{IEEEkeywords}
+}
+
+\newcommand{\setBibStyle}{\bibliographystyle{bibliography/IEEEtran}}
+%\IEEEoverridecommandlockouts

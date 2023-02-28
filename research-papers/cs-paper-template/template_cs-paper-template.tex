@@ -1,0 +1,33 @@
+%=============================%
+%   DO NOT MODIFY THIS FILE   %
+%=============================%
+
+% % The only files to be modified are:
+% %   user/*.tex
+% %   sections/*.tex
+% %   bibliography/references.bib
+
+% % Add your text in tex files in the 'sections' directory.
+% % Update settings.tex to determine which files to include from 'sections' directory
+
+\input{user/settings}
+\input{config/\varStyle}
+\input{user/topmatter}
+
+\documentclass[\varKeyvals]{\varDocClass}
+
+\input{user/packages}
+\input{user/preamble}
+
+\begin{document}
+	\insertTopmatter
+	
+	\makeatletter
+	\@for\varSection:={\varSections}\do{\input{sections/\varSection}}
+	\makeatother
+	
+	\setBibStyle
+	\bibliography{bibliography/references.bib}
+\end{document}
+
+% % Template available on GitHub: https://github.com/HaririAli/cs-paper-template
