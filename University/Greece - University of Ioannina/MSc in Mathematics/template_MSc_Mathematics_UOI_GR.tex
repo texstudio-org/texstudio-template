@@ -1,0 +1,152 @@
+\documentclass[a4paper,openright,twoside, 11pt]{report}
+
+%% Define margins
+\usepackage[top=5.35cm,bottom=5.35cm,left=4cm,right=4cm]{geometry}
+
+
+%% Spacing in paragraphs
+\parindent12pt
+\parskip6pt
+
+%% The "usual" math packages
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% The Greek language, indentation and keyboard
+\usepackage{indentfirst}
+\usepackage[english,greek]{babel}
+\usepackage[iso-8859-7]{inputenc}
+
+% Type \en{text} for latin alphabet
+\newcommand{\en}{\latintext}
+
+% Some fun with figures
+\usepackage{graphicx}
+
+\usepackage{fancyhdr}
+
+\renewcommand{\headrulewidth}{0pt}
+
+
+%% Define shortcuts
+\newcommand{\uoiauthor}{Όνομα Επίθετο}
+\newcommand{\uoiyear}{2013}
+\newcommand{\uoititle}{\LARGE\textsc{Τίτλος Διατριβής}}
+\newcommand{\examdate}{Ημερομηνία εξέτασης}
+
+\newcommand{\thesisdedication}{Αφιερώνεται στον/στην ...}
+
+\newcommand{\advisor}{Όνομα Επίθετο}
+\newcommand{\rankadvisor}{Καθηγητής}
+%
+\newcommand{\examinera}{Όνομα Επίθετο}
+\newcommand{\ranka}{Αναπληρωτής Καθηγητής}
+%
+\newcommand{\examinerb}{Όνομα Επίθετο}
+\newcommand{\rankb}{Επίκουρος Καθηγητής}
+
+
+\usepackage[Sonny]{fncychap_uoi}
+
+\begin{document}
+\ChTitleVar{\Huge\sc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Use abstract.tex for the abstract in Greek and abstract_english.tex for
+%% the abstract in english. Should you need to thank anyone (like your advisor!)
+%% use the ackno.tex file.
+%% Do not edit the lines below!
+\input{title}
+
+\input{dedication}
+
+\thispagestyle{empty}
+\input{declaration}
+
+\input{ackno}
+\newpage
+
+\pagenumbering{roman}
+\input{abstract}
+\newpage
+
+\input{abstract_english}
+\newpage
+
+\pagenumbering{arabic}
+\thispagestyle{plain}
+\addtocontents{toc}{\contentsline {chapter} {Περίληψη}{\en{i}}}
+\addtocontents{toc}{\contentsline {chapter} {{\en Abstract}}{\en{ii}}}
+\tableofcontents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+ \ChNameVar{\Large\bf}
+  \ChNumVar{\fontsize{60}{62}\usefont{OT1}{ptm}{m}{n}\selectfont}
+  \ChTitleVar{\Huge\sc}
+  \ChRuleWidth{1pt}
+  \renewcommand{\DOCH}{\vspace*{-65pt}
+    \settowidth{\px}{\CNV\FmN{\@chapapp}}
+    \addtolength{\px}{2pt}
+    \settoheight{\py}{\CNV\FmN{\@chapapp}}
+    \addtolength{\py}{1pt}
+
+    \settowidth{\mylen}{\CNV\FmN{\@chapapp}\space\CNoV\thechapter}
+    \addtolength{\mylen}{1pt}
+    \settowidth{\pxx}{\CNoV\thechapter}
+    \addtolength{\pxx}{-1pt}
+
+    \settoheight{\pyy}{\CNoV\thechapter}
+    \addtolength{\pyy}{-2pt}
+    \setlength{\myhi}{\pyy}
+    \addtolength{\myhi}{-1\py}
+    \par
+    \parbox[b]{\textwidth}{%
+    \rule[\py]{\RW}{\myhi}%
+    \hskip -\RW%
+    \rule[\pyy]{\px}{\RW}%
+    \hskip -\px%
+    \raggedright%
+    \CNV\FmN{\@chapapp}\space\CNoV\thechapter%
+    \hskip1pt%
+    \mghrulefill{\RW}%
+    \rule{\RW}{\pyy}\par\nobreak%
+    \vskip -\baselineskip%
+    \vskip -\pyy%
+    \hskip \mylen%
+    \mghrulefill{\RW}\par\nobreak%
+    \vskip \pyy}%
+    \vskip 20\p@}
+
+  \renewcommand{\DOTI}[1]{
+    \raggedright
+    \CTV\FmTi{#1}\par\nobreak
+    \vskip 40\p@}
+
+  \renewcommand{\DOTIS}[1]{
+    \raggedright
+    \CTV\FmTi{#1}\par\nobreak
+    \vskip 40\p@}
+
+\pagestyle{fancy}
+\lhead{\textit{\chaptername}\ \thechapter}
+\rhead{\nouppercase{\rightmark}}
+
+%% To add a chapter use the \input command as below. The filename should
+%% end in .tex, for example chapter1.tex.
+
+\input{chapter1}
+
+%\input{chapter2}
+
+%% Add more chapters as above
+
+%Should you need an appendix
+%\appendix
+%\input{appendix}
+
+%% Use bibtex for your references
+%\bibliographystyle{acm}
+%\bibliography{biblio}
+%
+\end{document}
