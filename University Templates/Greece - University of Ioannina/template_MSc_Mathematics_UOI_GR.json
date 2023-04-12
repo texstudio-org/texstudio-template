@@ -1,0 +1,9 @@
+{
+    "Author": "UOI",
+    "Date": "2023-04-10",
+    "Description": "Template for Master degree thesis in Mathematics. University on Ioannina Greece",
+    "License": "",
+    "Name": "MSc Thesis Mathematics UOI",
+    "Version": "1.0",
+    "FilesToOpen" : "./thesisMSc.tex"
+}
