@@ -1,0 +1,9 @@
+{
+    "Author": "spyros",
+    "Date": "2023-04-10",
+    "Description": "Template for Phd thesis in Mathematics. University on Ioannina - Greece",
+    "License": "",
+    "Name": "Phd Thesis Mathematics UOI",
+    "Version": "1.0",
+    "FilesToOpen" : "./thesis.tex"
+}
