@@ -1,0 +1,57 @@
+% !TeX TS-program = lualatex
+\documentclass[
+DIN5008B,
+fromphone=true,
+fromemail=true
+]{scrlttr2}
+
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\usepackage{fontspec}
+\IfFontExistsTF{TeX Gyre Heros}{
+	\setmainfont{TeX Gyre Heros}
+	\setsansfont{TeX Gyre Heros}
+}{
+	\IfFontExistsTF{Open Sans}{
+		\setmainfont{Open Sans}
+		\setsansfont{Open Sans}
+	}{
+		\setmainfont{Arial}
+		\setsansfont{Arial}
+	}
+}
+
+\begin{document}
+	\setkomavar{fromname}{Erika Mustermann}
+	\setkomavar{fromaddress}{Heidestraße 17\\51147 Köln}
+	\setkomavar{fromphone}[]{+49 123 1234567}
+	\setkomavar{fromemail}[]{\href{mailto:erika.mustermann@example.com}{erika.mustermann@example.com}}
+	
+	\setkomavar{yourref}{LO-RI 260}
+	\setkomavar{yourmail}{\today}
+	\setkomavar{customer}{4311466-0}
+	\setkomavar{date}{\today}
+	
+	\setkomavar{subject}{Kündigung}
+	
+	%\setkomavar{signature}{\includegraphics[width=5cm]{Unterschrift.png}\\\usekomavar{fromname}} 
+	
+	\begin{letter}{
+			Deutsche Röhren AG\\
+			Goethestraße 7\\
+			21614 Buxtehude
+		}
+		
+		\opening{Sehr geehrte Damen und Herren,}
+		
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae diam quis lacus maximus ornare tempor sit amet lorem. Sed ac lorem id mi suscipit convallis. Proin ut dolor posuere, maximus nibh eget, volutpat lacus. Quisque sollicitudin ultrices risus, in lobortis orci interdum nec.
+		
+		Suspendisse tristique eu ligula ac efficitur. Vivamus euismod at ligula a laoreet. Sed pretium, magna ut bibendum pharetra, orci ligula maximus justo, vitae faucibus lorem eros a turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent nunc odio, laoreet eu ornare at, pharetra et lorem. Proin sed tempus sapien, ac luctus ipsum.
+		
+		\closing{Mit freundlichen Grüßen}
+		
+		\encl{Formular A38}
+	\end{letter}
+\end{document}
