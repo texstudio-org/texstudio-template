@@ -1,0 +1,54 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{vietnam}
+\usepackage[margin=.5in]{geometry}
+\usepackage{amsmath, amssymb, amsthm, gensymb, multicol, graphicx, ragged2e, nopageno, wrapfig, charter, tkz-euclide, rotating}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=red]{hyperref}
+\usepackage[framemethod=1]{mdframed}
+\usetikzlibrary{math}
+\newcommand{\fcb}[1]{\fcolorbox{red}{yellow}{\textbf{\textcolor{blue}{#1}}}} % Viền đỏ, nền vàng, chữ xanh đậm
+\newcommand{\ctext}[1]{\huge{\textbf{#1}}} % Tiêu đề
+% Các tập sau đây thường được dùng, viết rút gọn
+\newcommand{\R}{\mathbb{R}} % Tập số thực
+\newcommand{\Rp}{\mathbb{R}_+} % Tập số thực dương
+\newcommand{\Z}{\mathbb{Z}} % Tập số nguyên
+\newcommand{\Zp}{\mathbb{Z}_+} % Tập số nguyên dương
+\newcommand{\N}{\mathbb{N}} % Tập số tự nhiên
+\newcommand{\Q}{\mathbb{Q}} % Tập số hữu tỉ
+\newcommand{\Qp}{\mathbb{Q}_+} % Tập số hữu tỉ dương
+\newcommand{\PR}{\mathbb{P}} % Tập số nguyên tố
+\newcommand{\opintvl}[2]{\left(#1; #2\right)} % Khoảng
+\newcommand{\clointvl}[2]{\left[#1; #2\right]} % Đoạn
+\newcommand{\lclointvl}[2]{\left[#1; #2\right)} % Khoảng nửa đóng (bên trái)
+\newcommand{\rclointvl}[2]{\left(#1; #2\right]} % Khoảng nửa đóng (bên phải)
+\newcommand{\power}[2]{\mathcal{P}\left(#1, #2\right)} % Phương tích của điểm đến đường tròn
+\newcommand{\fphi}[1]{\phi\left(#1\right)} % Hàm phi - Euler
+\newcommand{\ftau}[1]{\tau\left(#1\right)} % Hàm đếm ước
+\newcommand{\fsigma}[2]{\sigma_{#1}\left(#2\right)} % Hàm tổng lũy thừa ước
+\newcommand{\fpi}[1]{\pi\left(#1\right)} % Hàm đếm số nguyên tố
+%%%%%%%%%%%%%%%% Tiêu đề, tác giả và ngày tháng
+\title{\ctext{Tiêu đề ở đây}} % Tiêu đề
+\author{\ctext{Hoàng Văn Phú}} % Tác giả
+\date{\textbf{Ngày 8 tháng 11 năm 2024}}
+%%%%%%%%%%%%%%%% Bắt đầu văn bản
+\begin{document}
+	\pagestyle{empty} % Không đánh dấu trang, có thể bỏ đi cả nopageno ở \usepackage và dòng này
+	\RaggedRight
+	\Large
+	\fontfamily{bch}\selectfont
+	\boldmath
+	\theoremstyle{definition}
+	\newmdtheoremenv[innerleftmargin = 4mm,	innerrightmargin = 4mm,	innertopmargin = 2mm, innerbottommargin = 4mm, linecolor=red, backgroundcolor=yellow, leftline=false, rightline=false]{theorem1dl}{Định lý}
+	\newmdtheoremenv[innerleftmargin = 4mm,	innerrightmargin = 4mm,	innertopmargin =2mm, innerbottommargin = 4mm, linecolor=red, backgroundcolor=yellow!50, leftline=false, rightline=false]{theorem2bd}{Bổ đề}
+	\newmdtheoremenv[innerleftmargin = 4mm,	innerrightmargin = 4mm,	innertopmargin = 2mm, innerbottommargin = 4mm, linecolor=red, backgroundcolor=yellow!75, leftline=false, rightline=false, linewidth=2pt]{theorem3nx}{Nhận xét}
+	\maketitle
+		
+		\maketitle
+		
+		\begin{abstract}
+			Nội dung tóm tắt nên được ghi ở đây
+		\end{abstract}
+		
+		\section{Phân mục ở đây}
+		Đây là 1 văn bản thử nghiệm
+	
+\end{document}
